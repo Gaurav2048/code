@@ -40,6 +40,18 @@ const useTableData = () => {
     }
   }, [selectAll]);
 
+  useEffect(() => {
+    const selectedCount = selections?.filter(s => !!s).length
+    console.log("selected C", selectedCount)
+    if (selectedCount === selections?.length) {
+        setState("checked")
+    } else if (selectedCount === 0) {
+        setState("unchecked")
+    } else {
+        setState("indeterminate")
+    }
+  }, [selections])
+
   return {
     data,
     setData,
