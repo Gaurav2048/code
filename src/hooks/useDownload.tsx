@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const STATUS_TYPE_AVAILABLE = "available";
+export const STATUS_TYPE_AVAILABLE = "available";
 
 const useDownload = (selections?: Array<boolean>, data?: Array<TableData>) => {
   const [enableDownload, setEnableDownload] = useState<boolean>(false);

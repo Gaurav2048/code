@@ -7,7 +7,7 @@ import {
   AppTableHeader,
   AppTableRow,
 } from "../../AppTable";
-import useDownload from "../../../hooks/useDownload";
+import useDownload, { STATUS_TYPE_AVAILABLE } from "../../../hooks/useDownload";
 
 const HomePage: React.FC = () => {
   const {
@@ -65,7 +65,10 @@ const HomePage: React.FC = () => {
               </AppTableCell>
               {Object.keys(el).map((key: string, index: number) => (
                 <AppTableCell key={index}>
-                  {el[key as keyof TableData]}
+                  <div className="flex">
+                    {(key === "status" && el[key as keyof TableData] === STATUS_TYPE_AVAILABLE) && <div className="dot" />}
+                    {el[key as keyof TableData]}
+                  </div>
                 </AppTableCell>
               ))}
             </AppTableRow>

@@ -66,3 +66,17 @@ th {
   gap: 24px;
   align-items: center;
 }
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.flex {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
